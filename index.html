@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eurtech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              llap: "1024px",
+              tab: { min: "768px", max: "1023px" },
+              mob: { max: "767px" },
+            },
+
+            maxWidth: {
+              "90%": "90%",
+            },
+            backgroundImage: {
+              "gradient-to-r":
+                "linear-gradient(90deg, #684cb1, #0ed5fa, #0ed5fa, #684cb1)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    
+
+    <div class="tot-page overflow-x-hidden">
+      <header class="header-section flex-col gap-4 m-auto max-w-90%">
+        <!-- Top Header start  -->
+
+        <div class="top-header flex items-center justify-between py-2">
+          <img
+            src="./Images/title.png"
+            alt=""
+            class="title-img"
+            style="width: 33vh"
+          />
+          <div
+            class="header-menu-section flex items-center mob:hidden tab:hidden"
+          >
+            <div class="nav-contact flex">
+              <div class="nav-contact-info flex items-center mr-20">
+                <div class="contact-img mr-1">
+                  <img src="./Images/phone.png" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="m-1">Call us now</p>
+                  <h4 class="m-1">000 111 222 333</h4>
+                </div>
+              </div>
+
+              <div class="nav-contact-info flex items-center mr-20">
+                <div class="contact-img mr-1">
+                  <img src="./Images/mail.png" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="m-1">Email Address</p>
+                  <h4 class="m-1">info@gmail.com</h4>
+                </div>
+              </div>
+            </div>
+            <div class="appointment-box">
+              <button
+                class="text-sm p-4 font-bold bg-white border-2 border-solid border-[#f2f2f2] cursor-pointer rounded-xl hover:bg-gradient-to-r from-purple-600 via-cyan-400 to-purple-600 hover:border-2 hover:border-solid hover:border-white hover:text-white"
+              >
+                GET APPOINTMENT
+              </button>
+            </div>
+          </div>
+          <img
+            src="./Images/menu-bar.png"
+            alt=""
+            class="toggle-menu lg:hidden tab:block mob:block h-7 w-7"
+            onclick="openNav(this)"
+            id="togg"
+          />
+        </div>
+
+        <!-- Top Header end  -->
+
+        <!-- Responsive nav start  -->
+
+        <div class="fix text-white" id="res-nav">
+          <div
+            id="sidenav"
+            class="sidenav hidden bg-none bg-repeat bg-scroll border-l-4 border-solid border-[#43baff] absolute top-0 right-0 w-96 z-50 overflow-y-scroll overscroll-y-contain bg-[#1a1e25] mob:w-80"
+          >
+            <div class="sidenav-content ml-7">
+              <div
+                class="sidenav-header flex justify-between border-b-2 border-solid border-[#1f242c] py-4 mb-4"
+              >
+                <img src="./Images/title-2.png" alt="" />
+                <div class="sidenav-close h-fit">
+                  <button
+                    class="close-btn text-white h-11 w-11 flex justify-center text-3xl bg-gradient-to-r rounded-full overflow-hidden"
+                    onclick="closeNav(this)"
+                  >
+                    &times;
+                  </button>
+                </div>
+              </div>
+              <div
+                class="sidenav-searchbox flex items-center border-b-2 border-solid border-[#1f242c] mb-5"
+              >
+                <input
+                  type="text"
+                  placeholder="What are you searching for?"
+                  class="search-input w-56 p-2 border-none outline-none bg-transparent"
+                />
+                <div>
+                  <img
+                    src="./Images/search-2.png"
+                    alt=""
+                    class="search-btn h-5 w-5 cursor-pointer"
+                  />
+                </div>
+              </div>
+              <div class="sidenav-menu" style="display: block !important">
+                <ul class="nav-links cursor-pointer">
+                  <li
+                    class="border-b-2 border-solid border-[#1f242c] list-none"
+                  >
+                    <a
+                      class="py-3 block border-b-2 border-solid border-[#ffffff0d] text-sm font-bold uppercase relative"
+                      >Home</a
+                    >
+                  </li>
+                  <li
+                    class="border-b-2 border-solid border-[#1f242c] list-none"
+                  >
+                    <a
+                      class="py-3 block border-b-2 border-solid border-[#ffffff0d] text-sm font-bold uppercase relative"
+                      >About</a
+                    >
+                  </li>
+                  <li
+                    class="border-b-2 border-solid border-[#1f242c] list-none"
+                  >
+                    <a
+                      class="py-3 block border-b-2 border-solid border-[#ffffff0d] text-sm font-bold uppercase relative"
+                      >Services</a
+                    >
+                  </li>
+                  <li
+                    class="border-b-2 border-solid border-[#1f242c] list-none"
+                  >
+                    <a
+                      class="py-3 block border-b-2 border-solid border-[#ffffff0d] text-sm font-bold uppercase relative"
+                      >Blog</a
+                    >
+                  </li>
+                  <li
+                    class="border-b-2 border-solid border-[#1f242c] list-none"
+                  >
+                    <a
+                      class="py-3 block border-b-2 border-solid border-[#ffffff0d] text-sm font-bold uppercase relative"
+                      >Pages</a
+                    >
+                  </li>
+                  <li
+                    class="border-b-2 border-solid border-[#1f242c] list-none"
+                  >
+                    <a
+                      class="py-3 block border-b-2 border-solid border-[#ffffff0d] text-sm font-bold uppercase relative"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="sidenav-contact-info mt-7 mb-5">
+                <h4 class="text-xl mb-5 uppercase font-bold">Contact Info</h4>
+                <ul>
+                  <li class="center-align flex items-center mb-3">
+                    <div class="contactinfo-icon mr-5">
+                      <img
+                        src="./Images/location.png"
+                        alt=""
+                        class="icon h-7 w-7"
+                      />
+                    </div>
+                    <div class="contactinfo-text">
+                      <a
+                        href=""
+                        class="text-sm font-semibold hover:text-[#43baff]"
+                        >12/A, Marchbank Road, Birmingham, UK</a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="center-align flex items-center mb-3">
+                    <div class="contactinfo-icon mr-5">
+                      <img
+                        src="./Images/phone-icon.png"
+                        alt=""
+                        class="icon h-7 w-7"
+                      />
+                    </div>
+                    <div class="contactinfo-text">
+                      <a
+                        href=""
+                        class="text-sm font-semibold hover:text-[#43baff]"
+                        >+0987654321</a
+                      >
+                    </div>
+                  </li>
+                  <li class="center-align flex items-center mb-3">
+                    <div class="contactinfo-icon mr-5">
+                      <img
+                        src="./Images/maili.png"
+                        alt=""
+                        class="icon h-7 w-7"
+                      />
+                    </div>
+                    <div class="contactinfo-text">
+                      <a
+                        href=""
+                        class="text-sm font-semibold hover:text-[#43baff]"
+                        >support@gmail.com</a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="sidenav-socialmedia">
+                <ul class="flex gap-5">
+                  <li
+                    class="rounded-full p-3 cursor-pointer border-2 border-solid border-white"
+                  >
+                    <a>f</a>
+                  </li>
+                  <li
+                    class="rounded-full p-3 cursor-pointer border-2 border-solid border-white"
+                  >
+                    <a>t</a>
+                  </li>
+                  <li
+                    class="rounded-full p-3 cursor-pointer border-2 border-solid border-white"
+                  >
+                    <a>Y</a>
+                  </li>
+                  <li
+                    class="rounded-full p-3 cursor-pointer border-2 border-solid border-white"
+                  >
+                    <a>in</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Responsive navbar end  -->
+
+        <!-- Navigation-bar section start  -->
+
+        <div
+          class="navigation-section flex justify-between items-center bg-white shadow-lg mob:hidden tab:hidden"
+        >
+          <div class="menu-dot-box p-4 bg-[#ebebeb] h-max cursor-pointer">
+            <img
+              src="./Images/menu-dots.png"
+              alt=""
+              class="menu-dots h-7 w-7"
+            />
+          </div>
+          <nav class="nav-bar">
+            <ul class="nav-items flex list-none m-0 p-0 gap-10 font-bold">
+              <li>
+                <a href="" class="text-[#1f242c] hover:text-[#008cff]"
+                  >HOME +
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-[#1f242c] hover:text-[#008cff]">ABOUT</a>
+              </li>
+              <li>
+                <a href="" class="text-[#1f242c] hover:text-[#008cff]"
+                  >SERVICES +
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-[#1f242c] hover:text-[#008cff]"
+                  >BLOG +
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-[#1f242c] hover:text-[#008cff]"
+                  >PAGES +
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-[#1f242c] hover:text-[#008cff]"
+                  >CONTACT</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="search-box p-4 bg-gradient-to-r">
+            <img
+              src="./Images/search-2.png"
+              alt=""
+              class="search-img h-7 w-7"
+            />
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero section start  -->
+
+      <section
+        class="hero-body bg-[url(./Images/hero-img.jpg)] bg-no-repeat min-h-[35rem]"
+      >
+        <div class="hero-body-words m-auto max-w-90%">
+          <div
+            class="hero-body-content max-w-[40em] h-fit absolute top-72 mob:w-[80%] mob:top-48 tab:top-52"
+          >
+            <span>We Provide Outsourced</span>
+            <h1 class="text-7xl font-bold text-[#1f242c] my-1 mob:text-[7vh]">
+              IT Solution
+            </h1>
+            <p class="text-[#1f242c] opacity-60">
+              IT producers worldwide face similar challenges around animal
+              welfare, farm profitablility, product and work efficiency.
+            </p>
+            <div
+              class="start-box flex mt-6 gap-8 items-center mob:flex-col mob:items-start"
+            >
+              <button
+                class="p-4 bg-gradient-to-r text-white font-bold border-0 border-solid border-transparent text-lg rounded-lg cursor-pointer"
+              >
+                GET STARTED
+              </button>
+              <div class="play-box flex items-center text-lg">
+                <img
+                  src="./Images/play.png"
+                  alt=""
+                  class="play-img h-[5vh] w-[5vh] mr-2"
+                />
+                <h4>INTRO VIDEO</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Section end  -->
+
+      <!-- About us section start -->
+
+      <section
+        class="about-us-section m-[5rem] max-w-90% flex gap-[10%] llap:gap-[5%] tab:flex-col tab:gap-[2cm] mob:flex-col mob:gap-[2cm] mob:m-0 mob:m-[4vh]"
+      >
+        <div class="about-imgs">
+          <div
+            class="experience-box bg-[#1f242c] px-[3vh] py-[5vh] w-fit text-white text-center absolute z-10 rounded-md"
+          >
+            <h1 class="m-0 text-[9vh] mob:text-[5vh]">30</h1>
+            <p class="mt-1">Years Experience</p>
+          </div>
+          <img
+            src="./Images/about-us-img.jpg"
+            alt=""
+            class="aboutus-img relative max-w-max llap:left-0 llap:top-0 mob:left-0 mob:top-0 mob:w-full mob:h-[50vh]"
+          />
+        </div>
+        <div class="about-us-words">
+          <div class="about-us-title">
+            <span class="text-[#008cff] font-bold">// About Us</span>
+            <h1
+              class="text-[7vh] font-bold my-5 text-[#1f242c] llap:text-[4vh] mob:text-[5vh]"
+            >
+              Best in classy product near from you.
+            </h1>
+          </div>
+          <div class="about-us-descrip">
+            <p class="opacity-50 leading-6">
+              From finance, retail, and travel, to social media, cybersecurity,
+              adtech, and more, market leaders are leveraging web data to
+              maintain their advantage. Discover how it can work for you.
+            </p>
+          </div>
+          <div
+            class="about-us-quote relative pl-5 my-5 mx-0 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[1vh] before:bg-[#008cff]"
+          >
+            <h4 class="mt-1 text-[#1f242c]">
+              Highest quality data, #01 network uptime, fastest output.
+            </h4>
+            <h4 class="mt-1 text-[#1f242c]">
+              Unlimited scale and customizing possibilities.
+            </h4>
+            <h5>
+              Miranda Helson, <span class="opacity-50">Head of Idea</span>
+            </h5>
+          </div>
+          <div class="learn-more">
+            <button
+              class="text-sm p-4 font-bold bg-white border-2 border-solid border-[#f2f2f2] cursor-pointer rounded-xl hover:bg-gradient-to-r from-purple-600 via-cyan-400 to-purple-600 hover:border-2 hover:border-solid hover:border-white hover:text-white"
+            >
+              LEARN MORE
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- About us section end  -->
+
+      <!-- Work Stats section start  -->
+
+      <section class="work-stats-section">
+        <div
+          class="counter-section flex m-auto max-w-90% justify-evenly text-center text-white rounded-xl p-[2%] bg-gradient-to-r relative top-20 tab:flex-wrap mob:flex-wrap"
+        >
+          <div class="w-60 h-fit">
+            <h1 class="counter-numbers text-[9vh] m-0">30</h1>
+            <p class="font-bold">Year Experience in this field</p>
+          </div>
+          <div class="w-60 h-fit">
+            <h1 class="counter-numbers text-[9vh] m-0">676</h1>
+            <p class="font-bold">Worldwide good clients</p>
+          </div>
+          <div class="w-60 h-fit">
+            <h1 class="counter-numbers text-[9vh] m-0">1200</h1>
+            <p class="font-bold">Worldwide Captured online base</p>
+          </div>
+          <div class="w-60 h-fit">
+            <h1 class="counter-numbers text-[9vh] m-0">5</h1>
+            <p class="font-bold">Masterclass Team ever made</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work Stats section end  -->
+
+      <!-- Service section start  -->
+
+      <section
+        class="service-section m-auto py-[15vh] px-0 text-white bg-[#1f242c]"
+      >
+        <div
+          class="service-header m-auto max-w-90% flex justify-between items-center"
+        >
+          <div class="service-title">
+            <span class="text-[#43baff] font-bold">// Service</span>
+            <h1 class="my-1 mx-0 text-[7vh] mob:text-[5vh]">What we do here</h1>
+          </div>
+          <div class="service-box">
+            <button
+              class="p-4 font-bold bg-[#1f242c] border-2 border-solid border-[#262c35] cursor-pointer rounded-xl text-white text-[2vh] hover:bg-gradient-to-r mob:hidden"
+            >
+              SERVICES
+            </button>
+          </div>
+        </div>
+        <div class="service-options">
+          <div
+            class="service-grid m-auto max-w-90% flex justify-between gap-4 my-[5vh] items-center tab:flex-wrap mob:flex-wrap"
+          >
+            <div
+              class="w-[35vh] py-[6vh] px-[4vh] bg-[#262c35] rounded-md cursor-pointer border-2 border-solid border-[#2e3339] mob:w-full tab:w-[50vh]"
+            >
+              <img src="./Images/seo.png" alt="" class="mb-5" />
+              <h2 class="my-4">SEO Monitoring</h2>
+              <p class="font-light opacity-60 my-5">
+                The quality data, best network uptime, fastest output.
+              </p>
+              <span class="opacity-40 font-light">// Read More</span>
+            </div>
+            <div
+              class="w-[35vh] py-[6vh] px-[4vh] bg-[#262c35] rounded-md cursor-pointer border-2 border-solid border-[#2e3339] mob:w-full tab:w-[50vh]"
+            >
+              <img src="./Images/server.png" alt="" class="mb-5" />
+              <h2 class="my-4">Server Security</h2>
+              <p class="font-light opacity-60 my-5">
+                The quality data, best network uptime, fastest output.
+              </p>
+              <span class="opacity-40 font-light">// Read More</span>
+            </div>
+            <div
+              class="w-[35vh] py-[6vh] px-[4vh] bg-[#262c35] rounded-md cursor-pointer border-2 border-solid border-[#2e3339] mob:w-full tab:w-[50vh]"
+            >
+              <img src="./Images/ui.png" alt="" class="mb-5" />
+              <h2 class="my-4">UX/UI Strategy</h2>
+              <p class="font-light opacity-60 my-5">
+                The quality data, best network uptime, fastest output.
+              </p>
+              <span class="opacity-40 font-light">// Read More</span>
+            </div>
+            <div
+              class="w-[35vh] py-[6vh] px-[4vh] bg-[#262c35] rounded-md cursor-pointer border-2 border-solid border-[#2e3339] mob:w-full tab:w-[50vh]"
+            >
+              <img src="./Images/analyse.png" alt="" class="mb-5" />
+              <h2 class="my-4">Analysis Tools</h2>
+              <p class="font-light opacity-60 my-5">
+                The quality data, best network uptime, fastest output.
+              </p>
+              <span class="opacity-40 font-light">// Read More</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service section end  -->
+
+      <!-- Customer experience start  -->
+
+      <section
+        class="customer-experience-section bg-[url(./Images/cust-exp-img.png)] bg-no-repeat py-[10vh] px-0"
+      >
+        <div
+          class="cust-body m-auto max-w-90% flex justify-between tab:flex-wrap mob:flex-wrap mob:gap-[1cm] tab:gap-[1cm]"
+        >
+          <div class="cust-header w-[40%] mob:w-full">
+            <div class="cust-title">
+              <span class="text-[#008cff] font-bold">// Some Facts</span>
+              <h1 class="text-[7vh] my-2 mx-0 mob:text-[5vh]">
+                The best customer experience
+              </h1>
+            </div>
+            <div class="skill-prog flex-col gap-[1cm] mt-5">
+              <div class="skill-1">
+                <div class="skill-title">
+                  <h4>Design & Servicing --- 64%</h4>
+                </div>
+                <div
+                  class="skill-bar-1 w-[30vh] bg-[#008cff] h-2 my-2 mx-0 tab:w-[60vh] mob:w-[20vh]"
+                ></div>
+              </div>
+              <div class="skill-2">
+                <div class="skill-title">
+                  <h4>Support & Productivity -- 82%</h4>
+                </div>
+                <div
+                  class="skill-bar-2 w-[50vh] bg-[#008cff] h-2 my-2 mx-0 tab:w-[80vh] mob:w-[40vh]"
+                ></div>
+              </div>
+              <div class="skill-3">
+                <div class="skill-title">
+                  <h4>Troubleshooting --- 70%</h4>
+                </div>
+                <div
+                  class="skill-bar-3 w-[35vh] bg-[#008cff] h-2 my-2 mx-0 tab:w-[70vh] mob:w-[25vh]"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="exp-img">
+            <img
+              src="./Images/exp-img.png"
+              alt=""
+              class="cust-exp-img h-[60vh] w-[90vh]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer experience end  -->
+
+      <!-- Query section start  -->
+
+      <section
+        class="query-section bg-[url(./Images/service-img.png)] bg-no-repeat py-[15vh]"
+      >
+        <div class="query-body m-auto max-w-90% text-center">
+          <span class="text-[#008cff] font-bold">// Services //</span>
+          <h1 class="text-[7vh] mt-[1vh] mb-[3vh] mob:text-[5vh]">
+            What we do here
+          </h1>
+          <div
+            class="query-boxes flex justify-center tab:flex-wrap mob:flex-wrap"
+          >
+            <form action="">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="w-[20vh] h-12 p-[2vh] text-[2vh] font-light bg-white border-2 border-solid border-[#e3dddd] rounded-lg mr-2 shadow-md"
+              />
+              <input
+                type="name"
+                placeholder="Website name"
+                class="w-[20vh] h-12 p-[2vh] text-[2vh] font-light bg-white border-2 border-solid border-[#e3dddd] rounded-lg mr-2 shadow-md"
+              />
+              <button
+                class="p-2 bg-gradient-to-r text-white font-bold border-0 border-solid border-transparent text-lg rounded-lg cursor-pointer mob:mt-4 tab:mt-4"
+              >
+                TEST SPEED
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Query section end  -->
+
+      <!-- Portfolio section start  -->
+
+      <section class="portfolio-section m-auto py-[15vh]">
+        <div
+          class="port-header m-auto max-w-90% flex items-center justify-between"
+        >
+          <div class="port-title">
+            <span class="text-[#008cff] font-bold">// Portfolio</span>
+            <h1 class="text-[7vh]">Case Studies</h1>
+          </div>
+          <div
+            class="arrow-toggle p-2 rounded-lg border-2 border-solid border-[#ebeff3] mob:hidden"
+          >
+            <button
+              class="left-arrow p-2 mx-2 border-2 border-solid border-transparent cursor-pointer rounded text-lg font-bold hover:bg-[#008cff] hover:text-white"
+            >
+              &lt;
+            </button>
+            <button
+              class="right-arrow p-2 mx-2 border-2 border-solid border-transparent cursor-pointer rounded text-lg font-bold hover:bg-[#008cff] hover:text-white"
+            >
+              &gt;
+            </button>
+          </div>
+        </div>
+        <div class="port-body flex justify-evenly py-[5vh]">
+          <div class="cyber bg-[#c8ced4] text-center cursor-pointer mob:hidden">
+            <div
+              class="cyber-img bg-[url(./Images/cyber.jpg)] bg-no-repeat bg-cover w-[35vh] h-[60vh]"
+            ></div>
+            <h3>Cybersecurity</h3>
+          </div>
+          <div
+            class="prob-sol bg-[#c8ced4] text-center cursor-pointer tab:hidden"
+          >
+            <div
+              class="ps-img bg-[url(./Images/prob-sol.jpg)] bg-no-repeat bg-cover w-[40vh] h-[60vh]"
+            ></div>
+            <h3>Problem Solutions</h3>
+          </div>
+          <div class="web bg-[#c8ced4] text-center cursor-pointer mob:hidden">
+            <div
+              class="web-img bg-[url(./Images/web.jpg)] bg-no-repeat bg-cover w-[40vh] h-[60vh]"
+            ></div>
+            <h3>Web Analysis</h3>
+          </div>
+          <div
+            class="prod-ana bg-[#c8ced4] text-center cursor-pointer tab:hidden mob:hidden"
+          >
+            <div
+              class="pa-img bg-[url(./Images/prod-ana.jpg)] bg-no-repeat bg-cover w-[35vh] h-[60vh]"
+            ></div>
+            <h3>Product Analysis</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio section end  -->
+
+      <section
+        class="feedback-section bg-[url(./Images/cust-exp-img.png)] bg-no-repeat py-[15h]"
+      >
+        <div class="feedback-title text-center">
+          <span class="text-[#008cff] font-bold">// Testimonals //</span>
+          <h1 class="text-[7vh] my-2 text-[#1f242c] mob:text-[5vh]">
+            User feedbacks
+          </h1>
+        </div>
+        <div class="feedback-container m-auto max-w-90% flex justify-evenly">
+          <div class="feedback-box1">
+            <div
+              class="box-content w-[40vh] h-fit p-[5vh] bg-white text-[#777] text-[2.3vh]"
+            >
+              <p class="ml-1 opacity-90">
+                "The worlds #1 web data platform from data collection
+                infrastructure to ready-made datasets, brights tow allow you to
+                retrive the public web data you care about."
+              </p>
+            </div>
+            <div class="box-user flex justify-center my-3 items-center">
+              <img
+                src="./Images/prof.png"
+                alt=""
+                class="feed-img w-[5vh] h-[5vh] mr-2"
+              />
+              <div class="user-info">
+                <h4>Miranda Nelson</h4>
+                <p class="ml-1 opacity-60">Head of Idea</p>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box2 mob:hidden">
+            <div
+              class="box-content w-[40vh] h-fit p-[5vh] bg-white text-[#777] text-[2.3vh]"
+            >
+              <p class="ml-1 opacity-90">
+                "The worlds #2 web data platform from data collection
+                infrastructure to ready-made datasets, brights tow allow you to
+                retrive the public web data you care about."
+              </p>
+            </div>
+            <div class="box-user flex justify-center my-3 items-center">
+              <img
+                src="./Images/prof.png"
+                alt=""
+                class="feed-img w-[5vh] h-[5vh] mr-2"
+              />
+              <div class="user-info">
+                <h4>Alexis Dowson</h4>
+                <p>Founder</p>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box3 tab:hidden mob:hidden">
+            <div
+              class="box-content w-[40vh] h-fit p-[5vh] bg-white text-[#777] text-[2.3vh]"
+            >
+              <p class="ml-1 opacity-90">
+                "The worlds #3 web data platform from data collection
+                infrastructure to ready-made datasets, brights tow allow you to
+                retrive the public web data you care about."
+              </p>
+            </div>
+            <div class="box-user flex justify-center my-3 items-center">
+              <img
+                src="./Images/prof.png"
+                alt=""
+                class="feed-img w-[5vh] h-[5vh] mr-2"
+              />
+              <div class="user-info">
+                <h4>Steven Smith</h4>
+                <p>Designer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio section end  -->
+
+      <!-- News section start  -->
+
+      <section class="news-section m-auto max-w-90% py-[10vh]">
+        <div class="news-header flex justify-between items-center">
+          <div class="news-title">
+            <span class="text-[#008cff] font-bold">// News</span>
+            <h1 class="text-[7vh] text-[#1f242c] my-3 mob:text-[5vh]">
+              News & Insights
+            </h1>
+          </div>
+          <div class="news-box mob:hidden">
+            <button
+              class="p-4 font-bold bg-white border-2 border-solid border-[#f2f2f2] cursor-pointer rounded-xl hover:bg-gradient-to-r hover:text-white"
+            >
+              MORE NEWS
+            </button>
+          </div>
+        </div>
+        <div
+          class="news-body flex justify-between gap-5 items-center py-[5vh] tab:flex-wrap mob:flex-wrap mob:justify-center"
+        >
+          <div class="news1-body max-w-[50vh]">
+            <div
+              class="news1-img bg-[url(./Images/news-1.jpg)] bg-no-repeat h-[60vh]"
+            >
+              <button
+                class="p-[2vh] rounded-lg border-2 border-solid border-[#e3dddd] bg-gradient-to-r text-white font-bold cursor-pointer text-[2vh]"
+              >
+                IT SOLUTION
+              </button>
+            </div>
+            <div class="news-content">
+              <p class="mb-3">Jul 10, 2022 ---- Romarola H.</p>
+              <h2 class="font-bold">
+                That will bring together 20 industry leading speakers
+              </h2>
+            </div>
+          </div>
+          <div class="news2-body max-w-[50vh]">
+            <div
+              class="news2-img bg-[url(./Images/news-2.jpg)] bg-no-repeat h-[60vh]"
+            >
+              <button
+                class="p-[2vh] rounded-lg border-2 border-solid border-[#e3dddd] bg-gradient-to-r text-white font-bold cursor-pointer text-[2vh]"
+              >
+                TECHNOLOGY
+              </button>
+            </div>
+            <div class="news-content">
+              <p class="mb-3">Aug 10, 2022 --- Steven</p>
+              <h2 class="font-bold">
+                DevFest for Ukraine is a charitable tech conference
+              </h2>
+            </div>
+          </div>
+          <div class="news3-body max-w-[50vh]">
+            <div
+              class="news3-img bg-[url(./Images/news-3.jpg)] bg-no-repeat h-[60vh]"
+            >
+              <button
+                class="p-[2vh] rounded-lg border-2 border-solid border-[#e3dddd] bg-gradient-to-r text-white font-bold cursor-pointer text-[2vh]"
+              >
+                WEB SECURITY
+              </button>
+            </div>
+            <div class="news-content">
+              <p class="mb-3">Aug 16, 2022 --- Perkar</p>
+              <h2 class="font-bold">
+                In times like these, uniting efforts & working together
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- News section end  -->
+
+      <!-- Newsletter section start  -->
+
+      <section
+        class="newsletter-section m-auto max-w-90% shadow-md relative top-[10vh]"
+      >
+        <div
+          class="newsletter-body py-[5vh] px-[8vh] bg-white flex gap-3 rounded-xl justify-between items-center tab:flex-col tab:items-start mob:flex-col mob:items-start"
+        >
+          <div class="newsletter-title">
+            <span class="text-[#008cff] font-bold">// Newsletter</span>
+            <h1 class="text-[7vh] text-[#1f242c] mob:text-[5vh]">
+              User feedbacks
+            </h1>
+          </div>
+          <div class="newsletter-content">
+            <form action="">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="h-[6vh] w-[35vh] border-2 border-solid border-[#f6f6f6] font-light tab:w-[50vh] mob:mb-4 mob:w-full"
+              />
+              <button
+                class="p-[1.5vh] border-2 border-solid border-[#f6f6f6] bg-gradient-to-r text-white font-bold cursor-pointer text-[2vh]"
+              >
+                NEWSLETTER
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter section end  -->
+
+      <!-- Footer section start  -->
+
+      <footer
+        class="footer-section bg-[#1f242c] text-white pt-[20vh] pb-[18vh]"
+      >
+        <div
+          class="footer-body m-auto max-w-90% flex items-start gap-[8vh] tab:flex-wrap mob:flex-wrap tab:gap-[3cm] mob:gap-[3cm]"
+        >
+          <div class="foot w-[33vh] h-[30vh]">
+            <h3 class="mb-[4vh] font-bold">About Us</h3>
+            <p class="text-[#9ba1ad]">
+              Learn from industry-leading speakers like Romain Guy and Chet
+              Haase who have been building Android since 1.0, Jhey Tompkins and
+              Una Kravets from the Google Chrome team.
+            </p>
+          </div>
+          <div class="foot-2 w-[37vh] h-[30vh]">
+            <h3 class="mb-[4vh] font-bold">Pages</h3>
+            <div class="foot-2-content flex gap-[5vh]">
+              <ul class="list-none">
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  About Us
+                </li>
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  Services
+                </li>
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  Price & Plan
+                </li>
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  Case Study
+                </li>
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  404 Page
+                </li>
+              </ul>
+              <ul class="list-none">
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  Our Terms
+                </li>
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  Faq
+                </li>
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  News
+                </li>
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  Contact
+                </li>
+                <li
+                  class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+                >
+                  Membership
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="foot w-[33vh] h-[30vh]">
+            <h3 class="mb-[4vh] font-bold">Our Services</h3>
+            <ul class="list-none">
+              <li
+                class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+              >
+                Software Solution
+              </li>
+              <li
+                class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+              >
+                Digital Marketing
+              </li>
+              <li
+                class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+              >
+                UI & UX Design
+              </li>
+              <li
+                class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+              >
+                Web Development
+              </li>
+              <li
+                class="cursor-pointer text-[#9ba1ad] border-b-2 border-solid border-b-[#344166] pb-3 mb-2 w-fit hover:text-[#43baff]"
+              >
+                24/7 Online Support
+              </li>
+            </ul>
+          </div>
+          <div class="foot-l">
+            <h3 class="mb-[4vh] font-bold">Our Availability</h3>
+            <ul class="list-none">
+              <li class="text-[#9ba1ad]">Mon - Fri</li>
+              <h4 class="font-bold">10:00 am to 06:00 pm</h4>
+              <br />
+              <li class="text-[#9ba1ad]">Saturday (1st & 4th)</li>
+              <h4 class="font-bold">08:00 am to 04:00 pm</h4>
+              <span class="emergency-box flex gap-[2vh] items-center mt-4">
+                <img src="./Images/message.png" alt="" />
+                <span>
+                  <h5>Emergency Service</h5>
+                  <h5>000 111 222 333</h5>
+                </span>
+              </span>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bar m-auto max-w-90% relative top-[10vh] bg-gradient-to-r rounded-xl">
+          <div class="footer-bar-content flex justify-between items-center py-[3vh] px-[4vh] tab:flex-wrap mob:flex-wrap mob:gap-3 mob:justify-center">
+            <img src="./Images/title-2.png" alt="" />
+            <div>
+              <ul class="bar-nav list-none flex gap-[1cm] cursor-pointer font-bold mob:text-[2vh]">
+                <li class="hover:text-[#43baff]">ABOUT</li>
+                <li class="hover:text-[#43baff]">FAQ</li>
+                <li class="hover:text-[#43baff]">CONTACT</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const sidenav = document.getElementById("sidenav");
+      function openNav(e){
+        sidenav.classList.toggle("hidden");
+        sidenav.classList.toggle("block");
+      }
+      function closeNav(e){
+        sidenav.classList.toggle("block");
+        sidenav.classList.toggle("hidden");
+        
+      }
+    </script>
+  </body>
+</html>
